@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminders - Online Learning Platform</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="light-mode">
+    <div class="dashboard-container">
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="profile-section">
+                <div class="profile-photo">
+                    <img src="../assets/dp.jpg" alt="Profile Photo" id="profile-photo">
+                </div>
+                <h2 class="student-name">Haroon Rasheed</h2>
+                <p class="student-id">Student ID: 22CS070</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="courses.html"><i class="fas fa-book"></i> My Courses</a></li>
+                <li><a href="progress.html"><i class="fas fa-chart-line"></i> Progress</a></li>
+                <li><a href="quizzes.html"><i class="fas fa-question-circle"></i> Quizzes</a></li>
+                <li class="active"><a href="reminders.html"><i class="fas fa-bell"></i> Reminders</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="theme-switcher">
+                <button id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- School Header -->
+            <div class="school-header">
+                <div class="school-logo">
+                    <img src="../assets/logo.jpg" alt="School Logo">
+                </div>
+                <div class="school-title">
+                    <h1>Mehran University of Engineering and Technology Jamshoro</h1>
+                    <p>Department of Computer Systems Engineering</p>
+                </div>
+            </div>
+
+            <header class="top-bar">
+                <h1>Study Reminders</h1>
+                <div class="reminder-filters">
+                    <select id="reminderStatus">
+                        <option value="all">All Reminders</option>
+                        <option value="upcoming">Upcoming</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- Reminder Overview -->
+            <section class="reminder-overview">
+                <div class="reminder-stats">
+                    <div class="reminder-stat-card">
+                        <i class="fas fa-bell"></i>
+                        <div class="stat-info">
+                            <h3>Active Reminders</h3>
+                            <p>5</p>
+                        </div>
+                    </div>
+                    <div class="reminder-stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="stat-info">
+                            <h3>Completed</h3>
+                            <p>12</p>
+                        </div>
+                    </div>
+                    <div class="reminder-stat-card">
+                        <i class="fas fa-calendar"></i>
+                        <div class="stat-info">
+                            <h3>This Week</h3>
+                            <p>3</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Add New Reminder -->
+            <section class="add-reminder">
+                <h2>Add New Reminder</h2>
+                <div class="reminder-form">
+                    <input type="text" id="reminder-title" placeholder="Enter reminder title">
+                    <input type="datetime-local" id="reminder-time">
+                    <select id="reminder-type">
+                        <option value="study">Study Session</option>
+                        <option value="quiz">Quiz</option>
+                        <option value="assignment">Assignment</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea id="reminder-notes" placeholder="Add notes (optional)"></textarea>
+                    <button id="add-reminder" class="add-reminder-btn">
+                        <i class="fas fa-plus"></i> Add Reminder
+                    </button>
+                </div>
+            </section>
+
+            <!-- Upcoming Reminders -->
+            <section class="upcoming-reminders">
+                <h2>Upcoming Reminders</h2>
+                <div class="reminder-list">
+                    <div class="reminder-item">
+                        <div class="reminder-info">
+                            <h3>JavaScript Quiz Preparation</h3>
+                            <div class="reminder-meta">
+                                <span><i class="fas fa-calendar"></i> Tomorrow, 2:00 PM</span>
+                                <span><i class="fas fa-tag"></i> Quiz</span>
+                            </div>
+                            <p class="reminder-notes">Review JavaScript basics and DOM manipulation</p>
+                        </div>
+                        <div class="reminder-actions">
+                            <button class="edit-reminder"><i class="fas fa-edit"></i></button>
+                            <button class="delete-reminder"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="reminder-item">
+                        <div class="reminder-info">
+                            <h3>Data Science Assignment</h3>
+                            <div class="reminder-meta">
+                                <span><i class="fas fa-calendar"></i> Jan 25, 2024, 5:00 PM</span>
+                                <span><i class="fas fa-tag"></i> Assignment</span>
+                            </div>
+                            <p class="reminder-notes">Complete the data analysis project</p>
+                        </div>
+                        <div class="reminder-actions">
+                            <button class="edit-reminder"><i class="fas fa-edit"></i></button>
+                            <button class="delete-reminder"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Completed Reminders -->
+            <section class="completed-reminders">
+                <h2>Completed Reminders</h2>
+                <div class="reminder-list">
+                    <div class="reminder-item completed">
+                        <div class="reminder-info">
+                            <h3>Web Development Study Session</h3>
+                            <div class="reminder-meta">
+                                <span><i class="fas fa-calendar-check"></i> Completed on: Jan 20, 2024</span>
+                                <span><i class="fas fa-tag"></i> Study Session</span>
+                            </div>
+                            <p class="reminder-notes">Reviewed HTML and CSS concepts</p>
+                        </div>
+                        <div class="reminder-actions">
+                            <button class="restore-reminder"><i class="fas fa-undo"></i></button>
+                            <button class="delete-reminder"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="reminder-item completed">
+                        <div class="reminder-info">
+                            <h3>Mobile App Development Quiz</h3>
+                            <div class="reminder-meta">
+                                <span><i class="fas fa-calendar-check"></i> Completed on: Jan 18, 2024</span>
+                                <span><i class="fas fa-tag"></i> Quiz</span>
+                            </div>
+                            <p class="reminder-notes">Completed the UI/UX design quiz</p>
+                        </div>
+                        <div class="reminder-actions">
+                            <button class="restore-reminder"><i class="fas fa-undo"></i></button>
+                            <button class="delete-reminder"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reminder Settings -->
+            <section class="reminder-settings">
+                <h2>Reminder Settings</h2>
+                <div class="settings-form">
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="email-notifications" checked>
+                            Email Notifications
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="browser-notifications" checked>
+                            Browser Notifications
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="sound-alerts" checked>
+                            Sound Alerts
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>Default Reminder Time:</label>
+                        <select id="default-reminder-time">
+                            <option value="15">15 minutes before</option>
+                            <option value="30">30 minutes before</option>
+                            <option value="60">1 hour before</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html> 

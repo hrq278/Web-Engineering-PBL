@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress - Online Learning Platform</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="light-mode">
+    <div class="dashboard-container">
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="profile-section">
+                <div class="profile-photo">
+                    <img src="../assets/dp.jpg" alt="Profile Photo" id="profile-photo">
+                </div>
+                <h2 class="student-name">Haroon Rasheed</h2>
+                <p class="student-id">Student ID: 22CS070</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="courses.html"><i class="fas fa-book"></i> My Courses</a></li>
+                <li class="active"><a href="progress.html"><i class="fas fa-chart-line"></i> Progress</a></li>
+                <li><a href="quizzes.html"><i class="fas fa-question-circle"></i> Quizzes</a></li>
+                <li><a href="reminders.html"><i class="fas fa-bell"></i> Reminders</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="theme-switcher">
+                <button id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- School Header -->
+            <div class="school-header">
+                <div class="school-logo">
+                    <img src="../assets/logo.jpg" alt="School Logo">
+                </div>
+                <div class="school-title">
+                    <h1>Mehran University of Engineering and Technology Jamshoro</h1>
+                    <p>Department of Computer Systems Engineering</p>
+                </div>
+            </div>
+
+            <header class="top-bar">
+                <h1>Learning Progress</h1>
+                <div class="progress-filters">
+                    <select id="timeRange">
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- Overall Progress -->
+            <section class="overall-progress">
+                <div class="progress-stats">
+                    <div class="progress-stat-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div class="stat-info">
+                            <h3>Overall Completion</h3>
+                            <p>65%</p>
+                        </div>
+                    </div>
+                    <div class="progress-stat-card">
+                        <i class="fas fa-clock"></i>
+                        <div class="stat-info">
+                            <h3>Study Hours</h3>
+                            <p>45 hours</p>
+                        </div>
+                    </div>
+                    <div class="progress-stat-card">
+                        <i class="fas fa-star"></i>
+                        <div class="stat-info">
+                            <h3>Achievement Points</h3>
+                            <p>850</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Course Progress -->
+            <section class="course-progress">
+                <h2>Course Progress</h2>
+                <div class="progress-list">
+                    <!-- Web Development Progress -->
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <h3>Web Development</h3>
+                            <span class="progress-percentage">75%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <div class="progress-details">
+                            <div class="detail-item">
+                                <span class="label">Completed Lessons:</span>
+                                <span class="value">15/20</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Quiz Scores:</span>
+                                <span class="value">85%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Assignments:</span>
+                                <span class="value">8/10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Science Progress -->
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <h3>Data Science</h3>
+                            <span class="progress-percentage">45%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 45%"></div>
+                        </div>
+                        <div class="progress-details">
+                            <div class="detail-item">
+                                <span class="label">Completed Lessons:</span>
+                                <span class="value">9/20</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Quiz Scores:</span>
+                                <span class="value">78%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Assignments:</span>
+                                <span class="value">4/10</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile App Development Progress -->
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <h3>Mobile App Development</h3>
+                            <span class="progress-percentage">30%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 30%"></div>
+                        </div>
+                        <div class="progress-details">
+                            <div class="detail-item">
+                                <span class="label">Completed Lessons:</span>
+                                <span class="value">6/20</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Quiz Scores:</span>
+                                <span class="value">92%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Assignments:</span>
+                                <span class="value">3/10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Analytics -->
+            <section class="learning-analytics">
+                <h2>Learning Analytics</h2>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Study Time Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="studyTimeChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Performance Trends</h3>
+                        <div class="chart-container">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Course Completion Overview</h3>
+                        <div class="chart-container">
+                            <canvas id="completionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Quiz Performance by Subject</h3>
+                        <div class="chart-container">
+                            <canvas id="quizChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Add Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        // Study Time Distribution Chart (Bar Chart)
+        const studyTimeChart = new Chart(
+            document.getElementById('studyTimeChart'),
+            {
+                type: 'bar',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Hours Studied',
+                        data: [4, 6, 3, 5, 4, 7, 2],
+                        backgroundColor: '#007ea7',
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: document.body.classList.contains('dark-mode') ? '#444' : '#e5e5e5'
+                            },
+                            ticks: {
+                                color: document.body.classList.contains('dark-mode') ? '#ffffff' : '#00171f'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: document.body.classList.contains('dark-mode') ? '#ffffff' : '#00171f'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        );
+
+        // Performance Trends Chart (Line Chart)
+        const performanceChart = new Chart(
+            document.getElementById('performanceChart'),
+            {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                    datasets: [{
+                        label: 'Web Development',
+                        data: [75, 82, 88, 85],
+                        borderColor: '#00a8e8',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Data Science',
+                        data: [65, 70, 78, 82],
+                        borderColor: '#007ea7',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Mobile Development',
+                        data: [70, 75, 72, 80],
+                        borderColor: '#003459',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            grid: {
+                                color: document.body.classList.contains('dark-mode') ? '#444' : '#e5e5e5'
+                            },
+                            ticks: {
+                                color: document.body.classList.contains('dark-mode') ? '#ffffff' : '#00171f'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: document.body.classList.contains('dark-mode') ? '#ffffff' : '#00171f'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: document.body.classList.contains('dark-mode') ? '#ffffff' : '#00171f'
+                            }
+                        }
+                    }
+                }
+            }
+        );
+
+        // Course Completion Overview Chart (Doughnut Chart)
+        const completionChart = new Chart(
+            document.getElementById('completionChart'),
+            {
+                type: 'doughnut',
+                data: {
+                    labels: ['Completed', 'In Progress', 'Not Started'],
+                    datasets: [{
+                        data: [45, 35, 20],
+                        backgroundColor: ['#00a8e8', '#007ea7', '#003459'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: document.body.classList.contains('dark-mode') ? '#ffffff' : '#00171f'
+                            }
+                        }
+                    }
+                }
+            }
+        );
+
+        // Quiz Performance Chart (Radar Chart)
+        const quizChart = new Chart(
+            document.getElementById('quizChart'),
+            {
+                type: 'radar',
+                data: {
+                    labels: ['HTML/CSS', 'JavaScript', 'React', 'Python', 'Data Analysis', 'Mobile Dev'],
+                    datasets: [{
+                        label: 'Quiz Scores',
+                        data: [90, 85, 75, 80, 70, 85],
+                        backgroundColor: 'rgba(0, 168, 232, 0.2)',
+                        borderColor: '#00a8e8',
+                        pointBackgroundColor: '#007ea7'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                color: document.body.classList.contains('dark-mode') ? '#ffffff' : '#00171f'
+                            },
+                            grid: {
+                                color: document.body.classList.contains('dark-mode') ? '#444' : '#e5e5e5'
+                            },
+                            pointLabels: {
+                                color: document.body.classList.contains('dark-mode') ? '#ffffff' : '#00171f'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: document.body.classList.contains('dark-mode') ? '#ffffff' : '#00171f'
+                            }
+                        }
+                    }
+                }
+            }
+        );
+
+        // Update chart colors when theme changes
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            const textColor = isDarkMode ? '#ffffff' : '#00171f';
+            const gridColor = isDarkMode ? '#444' : '#e5e5e5';
+
+            // Update all charts
+            [studyTimeChart, performanceChart, completionChart, quizChart].forEach(chart => {
+                if (chart.options.plugins.legend) {
+                    chart.options.plugins.legend.labels.color = textColor;
+                }
+                if (chart.options.scales) {
+                    Object.values(chart.options.scales).forEach(scale => {
+                        if (scale.ticks) {
+                            scale.ticks.color = textColor;
+                        }
+                        if (scale.grid) {
+                            scale.grid.color = gridColor;
+                        }
+                        if (scale.pointLabels) {
+                            scale.pointLabels.color = textColor;
+                        }
+                    });
+                }
+                chart.update();
+            });
+        });
+    </script>
+</body>
+</html> 

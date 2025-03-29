@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes - Online Learning Platform</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="light-mode">
+    <div class="dashboard-container">
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="profile-section">
+                <div class="profile-photo">
+                    <img src="../assets/dp.jpg" alt="Profile Photo" id="profile-photo">
+                </div>
+                <h2 class="student-name">Haroon Rasheed</h2>
+                <p class="student-id">Student ID: 22CS070</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="courses.html"><i class="fas fa-book"></i> My Courses</a></li>
+                <li><a href="progress.html"><i class="fas fa-chart-line"></i> Progress</a></li>
+                <li class="active"><a href="quizzes.html"><i class="fas fa-question-circle"></i> Quizzes</a></li>
+                <li><a href="reminders.html"><i class="fas fa-bell"></i> Reminders</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="theme-switcher">
+                <button id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- School Header -->
+            <div class="school-header">
+                <div class="school-logo">
+                    <img src="../assets/logo.jpg" alt="School Logo">
+                </div>
+                <div class="school-title">
+                    <h1>Mehran University of Engineering and Technology Jamshoro</h1>
+                    <p>Department of Computer Systems Engineering</p>
+                </div>
+            </div>
+
+            <header class="top-bar">
+                <h1>Quizzes</h1>
+                <div class="quiz-filters">
+                    <select id="quizStatus">
+                        <option value="all">All Quizzes</option>
+                        <option value="upcoming">Upcoming</option>
+                        <option value="completed">Completed</option>
+                        <option value="missed">Missed</option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- Quiz Overview -->
+            <section class="quiz-overview">
+                <div class="quiz-stats">
+                    <div class="quiz-stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="stat-info">
+                            <h3>Completed Quizzes</h3>
+                            <p>12</p>
+                        </div>
+                    </div>
+                    <div class="quiz-stat-card">
+                        <i class="fas fa-clock"></i>
+                        <div class="stat-info">
+                            <h3>Upcoming Quizzes</h3>
+                            <p>3</p>
+                        </div>
+                    </div>
+                    <div class="quiz-stat-card">
+                        <i class="fas fa-chart-bar"></i>
+                        <div class="stat-info">
+                            <h3>Average Score</h3>
+                            <p>85%</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upcoming Quizzes -->
+            <section class="upcoming-quizzes">
+                <h2>Upcoming Quizzes</h2>
+                <div class="quiz-list">
+                    <div class="quiz-item">
+                        <div class="quiz-info">
+                            <h3>JavaScript Basics</h3>
+                            <div class="quiz-meta">
+                                <span><i class="fas fa-book"></i> Web Development</span>
+                                <span><i class="fas fa-clock"></i> Due in 2 days</span>
+                            </div>
+                            <div class="quiz-details">
+                                <span><i class="fas fa-hourglass-half"></i> Duration: 30 mins</span>
+                                <span><i class="fas fa-question-circle"></i> 20 questions</span>
+                            </div>
+                        </div>
+                        <div class="quiz-actions">
+                            <button class="start-quiz">Start Quiz</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-item">
+                        <div class="quiz-info">
+                            <h3>CSS Layouts</h3>
+                            <div class="quiz-meta">
+                                <span><i class="fas fa-book"></i> Web Development</span>
+                                <span><i class="fas fa-clock"></i> Due in 5 days</span>
+                            </div>
+                            <div class="quiz-details">
+                                <span><i class="fas fa-hourglass-half"></i> Duration: 45 mins</span>
+                                <span><i class="fas fa-question-circle"></i> 25 questions</span>
+                            </div>
+                        </div>
+                        <div class="quiz-actions">
+                            <button class="start-quiz">Start Quiz</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Completed Quizzes -->
+            <section class="completed-quizzes">
+                <h2>Completed Quizzes</h2>
+                <div class="quiz-list">
+                    <div class="quiz-item completed">
+                        <div class="quiz-info">
+                            <h3>HTML Fundamentals</h3>
+                            <div class="quiz-meta">
+                                <span><i class="fas fa-book"></i> Web Development</span>
+                                <span><i class="fas fa-calendar-check"></i> Completed on: Jan 15, 2024</span>
+                            </div>
+                            <div class="quiz-details">
+                                <span><i class="fas fa-star"></i> Score: 92%</span>
+                                <span><i class="fas fa-clock"></i> Time taken: 25 mins</span>
+                            </div>
+                        </div>
+                        <div class="quiz-actions">
+                            <button class="review-quiz">Review Quiz</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-item completed">
+                        <div class="quiz-info">
+                            <h3>Data Analysis Basics</h3>
+                            <div class="quiz-meta">
+                                <span><i class="fas fa-book"></i> Data Science</span>
+                                <span><i class="fas fa-calendar-check"></i> Completed on: Jan 10, 2024</span>
+                            </div>
+                            <div class="quiz-details">
+                                <span><i class="fas fa-star"></i> Score: 88%</span>
+                                <span><i class="fas fa-clock"></i> Time taken: 35 mins</span>
+                            </div>
+                        </div>
+                        <div class="quiz-actions">
+                            <button class="review-quiz">Review Quiz</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Details Modal -->
+            <div class="modal" id="quizModal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="modal-header">
+                        <h2>Quiz Details</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="quiz-details-content">
+                            <div class="quiz-overview">
+                                <h3>Quiz Overview</h3>
+                                <p>Detailed information about the quiz, including topics covered and preparation materials.</p>
+                            </div>
+                            <div class="quiz-instructions">
+                                <h3>Instructions</h3>
+                                <ul>
+                                    <li>Read each question carefully</li>
+                                    <li>You have limited time to complete the quiz</li>
+                                    <li>Review your answers before submitting</li>
+                                </ul>
+                            </div>
+                            <div class="quiz-resources">
+                                <h3>Study Resources</h3>
+                                <ul>
+                                    <li>Course Materials</li>
+                                    <li>Practice Questions</li>
+                                    <li>Reference Links</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html> 

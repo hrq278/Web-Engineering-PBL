@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses - Online Learning Platform</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="light-mode">
+    <div class="dashboard-container">
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-menu" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="profile-section">
+                <div class="profile-photo">
+                    <img src="../assets/dp.jpg" alt="Profile Photo" id="profile-photo">
+                </div>
+                <h2 class="student-name">Haroon Rasheed</h2>
+                <p class="student-id">Student ID: 22CS070</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="active"><a href="courses.html"><i class="fas fa-book"></i> My Courses</a></li>
+                <li><a href="progress.html"><i class="fas fa-chart-line"></i> Progress</a></li>
+                <li><a href="quizzes.html"><i class="fas fa-question-circle"></i> Quizzes</a></li>
+                <li><a href="reminders.html"><i class="fas fa-bell"></i> Reminders</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="theme-switcher">
+                <button id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- School Header -->
+            <div class="school-header">
+                <div class="school-logo">
+                    <img src="../assets/logo.jpg" alt="School Logo">
+                </div>
+                <div class="school-title">
+                    <h1>Mehran University of Engineering and Technology Jamshoro</h1>
+                    <p>Department of Computer Systems Engineering</p>
+                </div>
+            </div>
+
+            <header class="top-bar">
+                <h1>My Courses</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search courses...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </header>
+
+            <!-- Course Categories -->
+            <section class="course-categories">
+                <div class="category-filters">
+                    <button class="category-btn active">All Courses</button>
+                    <button class="category-btn">In Progress</button>
+                    <button class="category-btn">Completed</button>
+                    <button class="category-btn">Upcoming</button>
+                </div>
+            </section>
+
+            <!-- Course Grid -->
+            <section class="course-grid">
+                <!-- Web Development Course -->
+                <div class="course-card">
+                    <img src="../assets/web.png" alt="Web Development">
+                    <div class="course-info">
+                        <h3>Web Development</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 8 weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> 2,500 students</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <p>75% Complete</p>
+                        <div class="course-actions">
+                            <button class="continue-btn">Continue Learning</button>
+                            <button class="course-details-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Science Course -->
+                <div class="course-card">
+                    <img src="../assets/datascience.jpeg" alt="Data Science">
+                    <div class="course-info">
+                        <h3>Data Science</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 12 weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> 1,800 students</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 45%"></div>
+                        </div>
+                        <p>45% Complete</p>
+                        <div class="course-actions">
+                            <button class="continue-btn">Continue Learning</button>
+                            <button class="course-details-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile App Development Course -->
+                <div class="course-card">
+                    <img src="../assets/appdev.jpeg" alt="Mobile App Development">
+                    <div class="course-info">
+                        <h3>Mobile App Development</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 10 weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> 1,200 students</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 30%"></div>
+                        </div>
+                        <p>30% Complete</p>
+                        <div class="course-actions">
+                            <button class="continue-btn">Continue Learning</button>
+                            <button class="course-details-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Course Details Modal -->
+            <div class="modal" id="courseModal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="modal-header">
+                        <h2>Course Details</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="course-details">
+                            <div class="course-overview">
+                                <h3>Course Overview</h3>
+                                <p>Detailed course description and objectives will be displayed here.</p>
+                            </div>
+                            <div class="course-curriculum">
+                                <h3>Curriculum</h3>
+                                <ul class="curriculum-list">
+                                    <li>Module 1: Introduction</li>
+                                    <li>Module 2: Core Concepts</li>
+                                    <li>Module 3: Advanced Topics</li>
+                                    <li>Module 4: Projects</li>
+                                </ul>
+                            </div>
+                            <div class="course-instructor">
+                                <h3>Instructor</h3>
+                                <div class="instructor-info">
+                                    <img src="https://via.placeholder.com/50" alt="Instructor">
+                                    <div>
+                                        <h4>Dr. Jane Smith</h4>
+                                        <p>Senior Developer & Educator</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html> 
